@@ -8,6 +8,7 @@
 
     const $ = id => document.getElementById(id);
     const el = {
+        //data to store
         score: $('score'), streak: $('streak'), best: $('best'), round: $('round'),
         lamp: $('lamp'), status: $('status'), reveal: $('reveal'),
         guess: $('guess'), submit: $('submit'),
@@ -22,7 +23,7 @@
         replays: 0, misses: 0, answered: false, started: false
     };
 
-    //storage (best score is just a convenience)
+    //storage
     try { state.best = parseInt(localStorage.getItem('morse-best') || '0', 10) || 0; } catch (e) { }
     function saveBest() { try { localStorage.setItem('morse-best', String(state.best)); } catch (e) { } }
 
