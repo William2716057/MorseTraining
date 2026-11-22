@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Copy the Code - Morse listening game</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Copy the Code</h1>
+        <p class="sub">Listen to the transmission, then type what was sent. Nothing is shown on screen.</p>
+
+        <div class="stats" aria-live="polite">
+            <div class="stat"><b id="score">0</b><span>Score</span></div>
+            <div class="stat"><b id="streak">0</b><span>Streak</span></div>
+            <div class="stat"><b id="best">0</b><span>Best score</span></div>
+            <div class="stat"><b id="round">0</b><span>Solved</span></div>
+        </div>
+
+        <div class="modes" role="group" aria-label="Game mode">
+            <button type="button" id="mode-words" aria-pressed="true">Words</button>
+            <button type="button" id="mode-sentences" aria-pressed="false">Sentences</button>
+        </div>
+
+        <section class="stage">
+            <div class="lamp" id="lamp" aria-hidden="true"></div>
+            <div class="status" id="status" role="status">Press Start to hear the first transmission.</div>
+            <div class="answer-reveal" id="reveal" aria-live="polite"></div>
+
+            <div class="row">
+                <input type="text" id="guess" placeholder="Type what you heard" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Your answer" disabled>
+                <button type="button" class="act" id="submit" disabled>Check</button>
+            </div>
+
+            <div class="tools">
+                <button type="button" class="act" id="start">Start</button>
+                <button type="button" class="ghost" id="replay" disabled>Replay</button>
+                <button type="button" class="ghost" id="skip" disabled>Skip</button>
+            </div>
+        </section>
+
+        <details>
+            <summary>Sound settings</summary>
+            <div class="controls">
+                <label>Speed <input type="range" id="wpm" min="5" max="30" value="15"><output id="wpm-out">15 wpm</output></label>
+                <label>Tone <input type="range" id="freq" min="400" max="900" step="10" value="620"><output id="freq-out">620 Hz</output></label>
+                <label>Volume <input type="range" id="vol" min="5" max="100" value="60"><output id="vol-out">60%</output></label>
+                <label>
+                    Extra spacing
+                    <select id="space">
+                        <option value="1">None</option>
+                        <option value="1.5">Some (1.5×)</option>
+                        <option value="2" selected>More (2×)</option>
+                        <option value="3">Lots (3×)</option>
+                    </select>
+                </label>
+            </div>
+        </details>
+
+        <p class="hint">
+            Points: 10 per word, 25 per sentence, minus 2 for every replay and 3 for every wrong guess (never below 1).
+            Shortcuts: <kbd>Enter</kbd> check / next, <kbd>Ctrl</kbd>+<kbd>Space</kbd> replay.
+        </p>
+    </main>
+
+    <script src="words.js"></script>
+    <script src="sentences.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

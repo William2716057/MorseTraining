@@ -1,0 +1,3 @@
+C:\Users\Wills\source\repos\MorseTrainingAudio\MorseTrainingAudio\obj\Debug\MorseTrainingAudio.njsproj.AssemblyReference.cache
+C:\Users\Wills\source\repos\MorseTrainingAudio\MorseTrainingAudio\obj\Debug\MorseTrainingAudio.njsproj.CoreCompileInputs.cache
+C:\Users\Wills\source\repos\MorseTrainingAudio\MorseTrainingAudio\bin\Microsoft.NodejsTools.WebRole.dll
