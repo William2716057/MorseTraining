@@ -148,7 +148,7 @@
         el.guess.value = '';
         el.submit.textContent = 'Check';
         setPlaying(true);
-        setStatus('Listening…');
+        setStatus('Listening...');
         el.guess.focus();
         playMorse(state.current.morse);
     }
@@ -156,7 +156,7 @@
     function replay() {
         if (!state.current || state.answered) return;
         state.replays++;
-        setStatus('Listening again…');
+        setStatus('Listening again...');
         playMorse(state.current.morse);
         el.guess.focus();
     }
